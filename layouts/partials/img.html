@@ -251,12 +251,12 @@ Add this CSS to your site to remove small gaps between adjacent elements:
   {{- /* Get image resource. */}}
   {{- $r := "" }}
   {{- if $u.IsAbs }}
-    {{- with resources.GetRemote $u.String }}
+    {{- with try (resources.GetRemote $u.String) }}
       {{- with .Err }}
-        {{- errorf "%s. See %s" . $.contentPath }}
-      {{- else }}
+        {{- errorf "%s. See %s" .Err $.contentPath }}
+      {{- else with .Value }}
         {{- /* Destination is a remote resource. */}}
-        {{- $r = . }}
+        {{- $r = .Value }}
       {{- end }}
     {{- else }}
       {{- errorf $msg }}
