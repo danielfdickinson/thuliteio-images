@@ -1,5 +1,11 @@
 # @thulite/images
 
+## 3.3.1
+
+### Patch Changes
+
+- [#27](https://github.com/thuliteio/images/pull/27) [`7914bea`](https://github.com/thuliteio/images/commit/7914beae806d9478a9e4d7d06ee097409984281c) Thanks [@toby-marks](https://github.com/toby-marks)! - Correcting for errors introduced by Hugo 0.141
+
 ## 3.3.0
 
 ### Minor Changes
