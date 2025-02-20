@@ -104,14 +104,14 @@ partial template, after the render hook has captured the resource.
 {{- /* Get image resource. */}}
 {{- $r := "" }}
 {{- if $u.IsAbs }}
-  {{- with resources.GetRemote $u.String }}
+  {{- with try (resources.GetRemote $u.String) }}
     {{- with .Err }}
       {{- if eq $errorLevel "warning" }}
-        {{- warnf "%s. See %s" . $contentPath }}
+        {{- warnf "%s. See %s" .Err $contentPath }}
       {{- else if eq $errorLevel "error" }}
-        {{- errorf "%s. See %s" . $contentPath }}
+        {{- errorf "%s. See %s" .Err $contentPath }}
       {{- end }}
-    {{- else }}
+    {{- else with .Value }}
       {{- /* Destination is a remote resource. */}}
       {{- $r = . }}
     {{- end }}
