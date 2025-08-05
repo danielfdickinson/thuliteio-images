@@ -1,5 +1,13 @@
 # @thulite/images
 
+## 3.3.2
+
+### Patch Changes
+
+- [#35](https://github.com/thuliteio/images/pull/35) [`1bd95c8`](https://github.com/thuliteio/images/commit/1bd95c8873fc6ccad4899a0f9361dbbf11120ed9) Thanks [@h-enk](https://github.com/h-enk)! - Update for new template system in Hugo v0.146.0
+
+- [#32](https://github.com/thuliteio/images/pull/32) [`c1a4f79`](https://github.com/thuliteio/images/commit/c1a4f79994237373ee91b0c109ed7ad7e6306908) Thanks [@danielfdickinson](https://github.com/danielfdickinson)! - Fix invalid HTML on img tag for render hook
+
 ## 3.3.1
 
 ### Patch Changes
