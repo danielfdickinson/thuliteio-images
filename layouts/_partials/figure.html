@@ -192,7 +192,7 @@ Add this CSS to your site to remove small gaps between adjacent elements:
     {{- end }}
   {{- end }}
 {{- else }}
-  {{- /* The width was not speficied, will be using $stdWidths. */}}
+  {{- /* The width was not specified, will be using $stdWidths. */}}
   {{- $stdWidths = $stdWidths | append $r.Width | sort }}
   {{- range $stdWidths }}
     {{- /* Do not enlarge. */}}
