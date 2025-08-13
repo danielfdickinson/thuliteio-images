@@ -152,10 +152,11 @@ partial template, after the render hook has captured the resource.
 {{- end }}
 
 {{/* Convert to webp. */}}
-{{- if ne $r.MediaType.SubType "gif" }}
+{{- if not (in (slice "gif" "svg") $r.MediaType.SubType) }}
   {{- $r = $r.Resize (printf "%dx%d webp" $r.Width $r.Height) }}
 {{- end }}
 
+{{- if ne $r.MediaType.SubType "svg" }}
 {{- /* Render image element. */ -}}
 <img
   src="{{ $r.RelPermalink }}"
@@ -168,5 +169,17 @@ partial template, after the render hook has captured the resource.
   {{- with .Title -}}title="{{ . }}"{{- end }}
   id="{{ $id }}"
 >
+{{- else }}
+<img
+  src="{{ $r.RelPermalink }}"
+  decoding="{{ site.Params.thulite_images.defaults.decoding }}"
+  fetchpriority="{{ site.Params.thulite_images.defaults.fetchpriority }}"
+  loading="{{ site.Params.thulite_images.defaults.loading }}"
+  alt="{{ .PlainText }}"
+  {{- with .Title -}}title="{{ . }}"{{- end }}
+  id="{{ $id }}"
+  class="markdown-svg"
+>
+{{- end }}
 
 {{- /**/ -}}
