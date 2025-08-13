@@ -1,5 +1,11 @@
 # @thulite/images
 
+## 3.3.3
+
+### Patch Changes
+
+- [#36](https://github.com/thuliteio/images/pull/36) [`938b5e6`](https://github.com/thuliteio/images/commit/938b5e660ae27c749d16d5dae289bb64c2d73599) Thanks [@danielfdickinson](https://github.com/danielfdickinson)! - Rebase fix svg images in markdown
+
 ## 3.3.2
 
 ### Patch Changes
