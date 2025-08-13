@@ -33,5 +33,5 @@ figcaption {
 }
 
 .markdown-svg {
-  background-color: #fff;
+  background-color: var(--markdown-svg, transparent);
 }
